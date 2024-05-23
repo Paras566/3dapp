@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coke3Dview</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'>
+    <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'></script>
+    <style>
+        .card-x3d {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: transparent;
+        }
+
+        x3d {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .showcase-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .animation-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img class="img-fluid logo" src="assets/images/logo.png"
+                    alt="logo">Journey</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" id="aboutPopover" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="3D Apps is a postgraguate module focused on designing a 3D Website. My name is Paras . and i am a MSE Advance Computer Science Student and my CandNo : 282557">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#drinks" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Drinks
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="coke.html">Cocacola</a></li>
+                            <li><a class="dropdown-item" href="sprite.html">Sprite</a></li>
+                            <li><a class="dropdown-item" href="drpeper.html">Dr.Pepper</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- showcase -->
+    <section class="bg-dark text-light p-5 text-center text-sm-start">
+        <div class="container showcase-container">
+            <div class="align-items-center justify-content-between">
+                <div>
+                    <h1>CocaCola Can 3D Model</h1>
+                    <p class="lead">This 3D Model has been created by Blender.</p>
+                </div>
+                <div class="col-md shadow" style="width: 1000px; height: 500px;">
+                    <div class="card bg-dark text-light">
+                        <div class="card-x3d">
+                            <x3d style="width: 100%; height: 100%;">
+                                <scene>
+                                    <viewpoint DEF="initialView" position="0 0 3" orientation="0 0 1 0"></viewpoint>
+                                    <transform DEF="rotatingTransform" id="rotatingTransform">
+                                        <inline url="models/coke/CocaCola.x3d"></inline>
+                                    </transform>
+                                    <TimeSensor DEF="clock" cycleInterval="4" loop="true" enabled="false"></TimeSensor>
+                                    <OrientationInterpolator DEF="spinner" key="0 0.5 1"
+                                        keyValue="0 1 0 0 0 1 0 3.14 0 1 0 6.28"></OrientationInterpolator>
+                                    <ROUTE fromNode="clock" fromField="fraction_changed" toNode="spinner"
+                                        toField="set_fraction"></ROUTE>
+                                    <ROUTE fromNode="spinner" fromField="value_changed" toNode="rotatingTransform"
+                                        toField="set_rotation"></ROUTE>
+                                </scene>
+                            </x3d>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="animation-button">
+                <button class="btn btn-dark" id="animationButton" onclick="toggleRotation()">Animation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boxes -->
+    <section class="bg-dark p-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md shadow">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <img class="img-fluid button-c d-none d-sm-block" src="assets/images/Coke.png"
+                                    alt="Coke">
+                            </div>
+                            <h3 class="card-title mb-3">Coca Cola</h3>
+                            <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
+                                simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and,
+                                when it was done, the mixture was combined with carbonated water and sampled by
+                                customers who all agreed - this new drink was something special!</p>
+                            <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-original-taste" class="btn btn-dark button-c">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md shadow">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <img class="img-fluid button-s d-none d-sm-block" src="assets/images/Sprite.png"
+                                    alt="Sprite">
+                            </div>
+                            <h3 class="card-title mb-3">Sprite</h3>
+                            <p class="card-text">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
+                                now the world's leading lemon and lime flavoured soft drink and is sold in more than 190
+                                different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious
+                                lemon lime taste of Sprite without the sugar or calories.</p>
+                            <a href="https://www.coca-cola.com/gb/en/brands/sprite" class="btn btn-dark button-s">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md shadow">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <img class="img-fluid button-p d-none d-sm-block" src="assets/images/drpeper.png"
+                                    alt="drpepper">
+                            </div>
+                            <h3 class="card-title mb-3">Dr Pepper</h3>
+                            <p class="card-text">Dr Pepper's unique, sparkling blend of 23 fruit flavours has been
+                                around for well over a century and it's still the same, with that distinctive flavour
+                                you just can't quite put your tongue on. It was created by Texas pharmacist Charles
+                                Alderton in 1885.</p>
+                            <a href="https://www.coca-cola.com/gb/en/brands/dr-pepper" class="btn btn-dark button-p">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">&copy Mobile 3D Application</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <script>
+        let isRotating = false;
+
+        function toggleRotation() {
+            const rotationTransform = document.getElementById('rotatingTransform');
+            const clock = document.querySelector('TimeSensor');
+            const button = document.getElementById('animationButton');
+
+            if (isRotating) {
+                // Stop the rotation
+                clock.setAttribute('enabled', 'false');
+                isRotating = false;
+                button.textContent = 'Animation';
+            } else {
+                // Align to initial position and start the rotation
+                const viewpoint = document.querySelector('viewpoint');
+                viewpoint.setAttribute('position', '0 0 3');
+                viewpoint.setAttribute('orientation', '0 0 1 0');
+                rotationTransform.setAttribute('rotation', '0 1 0 0');
+                setTimeout(() => {
+                    clock.setAttribute('enabled', 'true');
+                }, 500); // Give some time for the alignment
+                isRotating = true;
+                button.textContent = 'Stop Animation';
+            }
+        }
+    </script>
+    <script>
+        // Initialize all popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+</body>
+
+</html>

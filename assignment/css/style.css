@@ -1,0 +1,36 @@
+body::before{
+    display: block;
+    content: '';
+    height: 60px;
+}
+
+.logo {
+    transform: translateY(-8px);
+    width: 180px;
+    filter: drop-shadow(5px 5px 20px red);
+}
+
+.showcase {
+    transform: translateY(70px);
+    filter: drop-shadow(5px 5px 200px rgb(255, 255, 255))
+}
+
+.button-c {
+    filter: drop-shadow(50px 5px 30px rgb(127, 10, 10));
+}
+
+.button-s {
+    filter: drop-shadow(50px 5px 30px rgb(0, 255, 119));
+}
+
+.button-p {
+    filter: drop-shadow(50px 5px 30px rgb(255, 143, 238));
+}
+
+.card {
+    overflow: hidden;
+}
+
+.shadow {
+    filter: drop-shadow(1px 1px 5px rgb(255, 255, 255))
+}
