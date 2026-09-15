@@ -65,7 +65,7 @@
                                 <transform DEF="rotatingTransform" id="rotatingTransform">
                                     <inline url="assets/x3d/CocaCola.x3d"></inline>
                                 </transform>
-                                <TimeSensor DEF="clock" cycleInterval="4" loop="true" enabled="false"></TimeSensor>
+                                <TimeSensor DEF="clock" cycleInterval="4" loop="true" enabled="true"></TimeSensor>
                                 <OrientationInterpolator DEF="spinner" key="0 0.5 1"
                                     keyValue="0 1 0 0 0 1 0 3.14 0 1 0 6.28"></OrientationInterpolator>
                                 <ROUTE fromNode="clock" fromField="fraction_changed" toNode="spinner"
@@ -78,7 +78,7 @@
                 </div>
                 <div class="viewer-toolbar">
                     <button class="btn btn-primary btn-sm" id="animationButton" onclick="toggleRotation()">
-                        <i class="bi bi-play-fill"></i> Play animation
+                        <i class="bi bi-pause-fill"></i> Stop animation
                     </button>
                     <div class="viewer-hint"><i class="bi bi-mouse"></i> Click + drag to rotate manually</div>
                 </div>
@@ -154,7 +154,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script>
-        let isRotating = false;
+        let isRotating = true;
 
         function toggleRotation() {
             const rotationTransform = document.getElementById('rotatingTransform');
