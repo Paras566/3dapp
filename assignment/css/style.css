@@ -140,54 +140,11 @@ img {
     height: 64px;
 }
 
-.brand-mark::before,
-.brand-mark::after {
-    content: '';
-    position: absolute;
-    inset: -26px;
-    background:
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 68%),
-        radial-gradient(circle at 50% 50%, rgba(255, 110, 120, 0.07) 0%, transparent 60%);
-    filter: blur(20px);
-    z-index: 0;
-    border-radius: 50%;
-    animation: brandSmoke 7s ease-in-out infinite;
-}
-
-.brand-mark::after {
-    inset: -30px;
-    animation-delay: -3.5s;
-    animation-duration: 9s;
-    filter: blur(26px);
-    opacity: 0.5;
-}
-
 .brand-mark img {
     position: relative;
     z-index: 1;
     height: 56px;
     width: auto;
-    filter:
-        drop-shadow(0 0 8px rgba(255, 255, 255, 0.22))
-        drop-shadow(0 0 10px rgba(255, 59, 82, 0.2));
-}
-
-@keyframes brandSmoke {
-    0%, 100% {
-        opacity: 0.45;
-        transform: scale(0.94) translate(0, 0);
-    }
-    50% {
-        opacity: 0.75;
-        transform: scale(1.12) translate(3px, -4px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .brand-mark::before,
-    .brand-mark::after {
-        animation: none;
-    }
 }
 
 .navbar-collapse {
