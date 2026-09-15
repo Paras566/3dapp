@@ -14,8 +14,8 @@
     --text: #f4f5f8;
     --text-dim: #a7acba;
     --text-faint: #6b7284;
-    --accent: #7c6bff;
-    --accent-2: #22d3ee;
+    --accent: #e2131f;
+    --accent-2: #ff5468;
     --coke: #ff3b52;
     --sprite: #2ee6a6;
     --drpepper: #ff5fa2;
@@ -83,8 +83,8 @@ img {
     inset: 0;
     z-index: -1;
     background:
-        radial-gradient(circle at 15% 10%, rgba(124, 107, 255, 0.16), transparent 45%),
-        radial-gradient(circle at 85% 25%, rgba(34, 211, 238, 0.10), transparent 40%),
+        radial-gradient(circle at 15% 10%, rgba(226, 19, 31, 0.16), transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(255, 84, 104, 0.10), transparent 40%),
         radial-gradient(circle at 50% 100%, rgba(255, 59, 82, 0.08), transparent 45%),
         var(--bg);
     background-color: var(--bg);
@@ -301,12 +301,12 @@ img {
 .btn-primary {
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
     color: #fff;
-    box-shadow: 0 14px 34px -12px rgba(124, 107, 255, 0.55);
+    box-shadow: 0 14px 34px -12px rgba(226, 19, 31, 0.55);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 18px 40px -12px rgba(124, 107, 255, 0.7);
+    box-shadow: 0 18px 40px -12px rgba(226, 19, 31, 0.7);
     color: #fff;
 }
 
@@ -360,7 +360,7 @@ img {
     height: 8px;
     border-radius: 50%;
     background: var(--accent-2);
-    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+    box-shadow: 0 0 0 4px rgba(255, 84, 104, 0.18);
 }
 
 .hero-title {
@@ -522,7 +522,7 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(124, 107, 255, 0.14);
+    background: rgba(226, 19, 31, 0.14);
     color: var(--accent-2);
     font-size: 1.15rem;
     margin-bottom: 1rem;
