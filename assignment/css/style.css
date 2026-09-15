@@ -127,17 +127,61 @@ img {
 }
 
 .brand-mark {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    box-shadow: 0 6px 20px -6px rgba(124, 107, 255, 0.6);
+    width: 46px;
+    height: 40px;
+}
+
+.brand-mark::before,
+.brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: -20px -16px;
+    background:
+        radial-gradient(circle at 35% 40%, rgba(255, 80, 90, 0.65) 0%, rgba(255, 59, 82, 0.35) 35%, transparent 68%),
+        radial-gradient(circle at 65% 65%, rgba(255, 120, 90, 0.45) 0%, transparent 60%);
+    filter: blur(9px);
+    z-index: 0;
+    border-radius: 50%;
+    animation: brandSmoke 4.5s ease-in-out infinite;
+}
+
+.brand-mark::after {
+    animation-delay: -2.25s;
+    animation-duration: 6s;
+    filter: blur(14px);
+    opacity: 0.7;
+}
+
+.brand-mark img {
+    position: relative;
+    z-index: 1;
+    height: 26px;
+    width: auto;
+    filter:
+        drop-shadow(0 0 6px rgba(255, 45, 65, 0.85))
+        drop-shadow(0 0 16px rgba(255, 45, 65, 0.55));
+}
+
+@keyframes brandSmoke {
+    0%, 100% {
+        opacity: 0.65;
+        transform: scale(0.92) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.18) rotate(6deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-mark::before,
+    .brand-mark::after {
+        animation: none;
+    }
 }
 
 .nav-links {
