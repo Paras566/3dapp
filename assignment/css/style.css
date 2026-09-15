@@ -107,16 +107,21 @@ img {
 }
 
 .site-nav .nav-inner {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -182,6 +187,17 @@ img {
     .brand-mark::before,
     .brand-mark::after {
         animation: none;
+    }
+}
+
+.navbar-collapse {
+    flex-basis: auto;
+    flex-grow: 0;
+}
+
+@media (min-width: 1021px) {
+    .navbar-collapse {
+        display: flex !important;
     }
 }
 
@@ -841,7 +857,12 @@ img {
     .info-panel {
         position: static;
     }
+}
 
+/* Nav switches to the hamburger menu earlier than the content
+   reflow above, so the centered brand mark never collides with
+   the inline nav links. */
+@media (max-width: 1020px) {
     .nav-links {
         position: fixed;
         top: var(--nav-h);
